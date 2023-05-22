@@ -8,6 +8,7 @@ newBookBtn.addEventListener("click", () => {
     popUpForm.style.display = "flex";
     document.querySelector(".title").style.display = "none";
     document.querySelector(".newBtn").style.display = "none";
+    document.querySelector("#library").style.display = "none";
 });
 
 const closePopUp = document.getElementsByTagName("span")[0];
@@ -15,6 +16,7 @@ closePopUp.addEventListener("click", () => {
     popUpForm.style.display = "none";
     document.querySelector(".title").style.display = "flex";
     document.querySelector(".newBtn").style.display = "flex";
+    document.querySelector("#library").style.display = "grid";
 });
 
 let myLibrary = [];
@@ -40,8 +42,14 @@ function addBookToLibrary() {
     const pages = document.querySelector("#pages").value;
     const read = document.querySelector("#read").checked;
 
-    newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
+    if (title !== "" && author !== "" && pages !== "") {
+        newBook = new Book(title, author, pages, read);
+        myLibrary.push(newBook);
+        document.querySelector("#library").style.display = "grid";
+    } else {
+        alert("Set a Value");
+        document.querySelector("#library").style.display = "grid";
+    }
 
     setData();
     renderBook();
