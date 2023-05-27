@@ -156,7 +156,7 @@ button[type="submit"]:hover {
 }
 
 .readBtn, 
-#removeBtn {
+.removeBtn {
     width: 70%;
     padding: 0.3rem;
     font-size: 1rem;
@@ -164,6 +164,6 @@ button[type="submit"]:hover {
     border-radius: 0.4rem;
 }
 
-#removeBtn {
+.removeBtn {
     background-color: #fda4af;
 }
